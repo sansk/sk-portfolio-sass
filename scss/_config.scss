@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500;700&family=Audiowide&display=swap');
+
+$primary-color: #2bced1;
+$secondary-color: #14bbbe;
+$highlight-color: #048295;
+$img-bg-color: #ecf2f5;
+$bg-color: #e1e8df;
+$text-color: #181817;
+
+$font: 'Ubuntu', sans-serif;
+$logo-font: 'Audiowide', cursive;
+$font-weight: (
+    "regular": 300,
+    "medium": 500,
+    "bold": 700
+);
+
+@function weight($weight-name) {
+    @return map-get($font-weight, $weight-name )
+};
+
+@mixin transition-ease {
+    transition: all 0.5s, ease-in-out;
+};
+
+@mixin section-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%; 
+};
+
+@mixin section-head {
+    text-transform: uppercase;
+    text-decoration: underline $highlight-color;
+    text-underline-offset: 8px;
+    text-decoration-line: underline overline;
+};
+
+@mixin box-shadow-prop {
+    box-shadow: inset 1px 1px 10px $primary-color, 
+                            2px 2px 10px $highlight-color;
+};
+
+@mixin media-md {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+};
+
+@mixin media-lg {
+    @media screen and (min-width: 1024px) {
+        @content;
+    }
+};
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
